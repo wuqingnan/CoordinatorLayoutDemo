@@ -11,8 +11,11 @@ import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
-@EActivity(R.layout.activity_main)
-public class MainActivity extends AppCompatActivity {
+/**
+ * Created by shizy on 2016/5/21.
+ */
+@EActivity(R.layout.activity_test_toolbar)
+public class TestToolbarActivity extends AppCompatActivity {
 
     private Toolbar.OnMenuItemClickListener mOnMenuItemClickListener = new Toolbar.OnMenuItemClickListener() {
         @Override
