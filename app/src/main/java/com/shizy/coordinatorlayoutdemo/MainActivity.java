@@ -1,5 +1,7 @@
 package com.shizy.coordinatorlayoutdemo;
 
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -25,16 +27,29 @@ public class MainActivity extends AppCompatActivity {
     private View.OnClickListener mOnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
+            TestAppBarActivity_.intent(MainActivity.this).start();
             Toast.makeText(getApplicationContext(), "OnClick NavigationButton", Toast.LENGTH_SHORT).show();
         }
     };
 
     @ViewById(R.id.toolbar)
     Toolbar mToolbar;
+    @ViewById(R.id.tab_layout)
+    TabLayout mTabLayout;
+    @ViewById(R.id.viewpager)
+    ViewPager mViewPager;
+
+    private TabLayoutAdapter mTabLayoutAdapter;
 
     @AfterViews
     protected void afterViews() {
         // setTitle必须放到setSupportActionBar前面，放后面无效
+        initToolBar();
+        initViewPager();
+        initTabLayout();
+    }
+
+    private void initToolBar() {
         mToolbar.setTitle(R.string.main_title);
         setSupportActionBar(mToolbar);
 
@@ -44,6 +59,15 @@ public class MainActivity extends AppCompatActivity {
 
         mToolbar.setNavigationOnClickListener(mOnClickListener);
         mToolbar.setOnMenuItemClickListener(mOnMenuItemClickListener);
+    }
+
+    private void initViewPager() {
+        mTabLayoutAdapter = new TabLayoutAdapter(getSupportFragmentManager());
+        mViewPager.setAdapter(mTabLayoutAdapter);
+    }
+
+    private void initTabLayout() {
+        mTabLayout.setupWithViewPager(mViewPager);
     }
 
     @Override
