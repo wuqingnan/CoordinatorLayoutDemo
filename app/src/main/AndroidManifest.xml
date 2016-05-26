@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity_">
+        <activity android:name=".CollapsingToolBarActivity_">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,6 +17,7 @@
         </activity>
         <activity android:name=".TestToolbarActivity_" />
         <activity android:name=".TestAppBarActivity_" />
+        <activity android:name=".MainActivity_" />
     </application>
 
 </manifest>

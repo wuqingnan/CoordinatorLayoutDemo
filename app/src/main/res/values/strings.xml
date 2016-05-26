@@ -1,7 +1,10 @@
 <resources>
     <string name="app_name">CoordinatorLayout</string>
-    <string name="main_title">Demo</string>
+    <string name="main_title">AppBarDemo</string>
     <string name="main_sub_title">CoordinatorLayout</string>
+    <string name="hobbit">HOBBIT</string>
+
+    <string name="tab_layout">TabLayout</string>
 
     <string name="menu1">menu1</string>
     <string name="menu2">menu2</string>
