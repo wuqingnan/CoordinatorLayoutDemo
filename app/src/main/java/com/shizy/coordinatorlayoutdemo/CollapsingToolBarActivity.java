@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
@@ -36,6 +37,11 @@ public class CollapsingToolBarActivity extends AppCompatActivity {
     protected void afterViews() {
         // setTitle必须放到setSupportActionBar前面，放后面无效
         initToolBar();
+    }
+
+    @Click(R.id.fab)
+    protected void onClickFABButton() {
+        MainActivity_.intent(this).start();
     }
 
     private void initToolBar() {

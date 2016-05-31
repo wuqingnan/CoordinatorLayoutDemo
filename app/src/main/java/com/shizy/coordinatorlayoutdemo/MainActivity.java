@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
     private View.OnClickListener mOnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            TestAppBarActivity_.intent(MainActivity.this).start();
             Toast.makeText(getApplicationContext(), "OnClick NavigationButton", Toast.LENGTH_SHORT).show();
         }
     };
